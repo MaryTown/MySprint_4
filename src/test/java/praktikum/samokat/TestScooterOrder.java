@@ -54,15 +54,12 @@ public class TestScooterOrder {
         webDriver.get(Urls.url);
         webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
-    static MainPage objectMainPage = new MainPage(webDriver);
-    static By upOrderButton = objectMainPage.getUpOrderButton();
-    static By downOrderButton = objectMainPage.getDownOrderButton();
 
     @Parameterized.Parameters
     public static Object[][] orderParameters() {
         return new Object[][]{
-                {upOrderButton, "Иван", "Пупкин", "Москва, ул. Тверская-Ямская, д.16", "Маяковская", "79808008990", "19.07.2023", "двое суток", "чёрный жемчуг", "блаблабла"},
-                {downOrderButton, "Илья", "Глупенький", "Москва, ул. Чертановская, д.2", "Чертановская", "79996660906", "23.07.2023", "пятеро суток", "серая безысходность", "комментарии излишне"},
+                {MainPage.getUpOrderButton(), "Иван", "Пупкин", "Москва, ул. Тверская-Ямская, д.16", "Маяковская", "79808008990", "19.07.2023", "двое суток", "чёрный жемчуг", "блаблабла"},
+                {MainPage.getDownOrderButton(), "Илья", "Глупенький", "Москва, ул. Чертановская, д.2", "Чертановская", "79996660906", "23.07.2023", "пятеро суток", "серая безысходность", "комментарии излишне"},
         };
     }
 

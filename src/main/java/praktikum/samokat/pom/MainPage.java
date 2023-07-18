@@ -13,9 +13,9 @@ import java.time.Duration;
 public class MainPage {
     private final WebDriver webDriver;
     // верхняя кнопка "Заказать"
-    private final By upOrderButton = By.xpath(".//button[@class='Button_Button__ra12g']");
+    private static final By upOrderButton = By.xpath(".//button[@class='Button_Button__ra12g']");
     // нижняя кнопка "Заказать"
-    private final By downOrderButton = By.xpath(".//button[contains(@class, 'Button_Middle__1CSJM')]");
+    private static final By downOrderButton = By.xpath(".//button[contains(@class, 'Button_Middle__1CSJM')]");
 
     public MainPage(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -28,10 +28,10 @@ public class MainPage {
         webDriver.findElement(orderButton).click();
     }
 
-    public By getUpOrderButton(){
+    public static By getUpOrderButton(){
         return upOrderButton;
     }
-    public By getDownOrderButton(){
+    public static By getDownOrderButton(){
         return downOrderButton;
     }
 
